@@ -1,0 +1,14 @@
+.venv
+.idea
+data
+models
+recycle
+runs
+reports
+scratch
+data_clean
+dataset_clean
+backup data
+*.pt
+*.onnx
+*.engine
