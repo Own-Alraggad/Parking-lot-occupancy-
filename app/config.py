@@ -70,7 +70,7 @@ class Settings(BaseSettings):
     # ------------------------------------------------------------------
     # Model / inference
     # ------------------------------------------------------------------
-    model_path: Path = Path("weights/best.onnx")
+    model_path: Path = Path("weights/best.pt")
 
     # "auto" resolves to CUDA if available else CPU (decided in model.py,
     # not here, since torch shouldn't be imported at config-parse time).
@@ -80,7 +80,7 @@ class Settings(BaseSettings):
     # (see model.py's get_backend() factory). Add a new literal value here
     # whenever a new backend class is registered -- this is the single
     # switch that makes the model swappable without touching any other file.
-    model_backend: Literal["ultralytics_yolo", "onnx", "tensorrt"] = "onnx"
+    model_backend: Literal["ultralytics_yolo", "onnx", "tensorrt"] = "ultralytics_yolo"
 
     # Must match (or be compatible with) the imgsz used during training so
     # the model sees the same effective resolution it was fine-tuned at.
